@@ -1,142 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.cmich.place1l.samplemusic.MainActivity">
 
+
     <Button
-        android:id="@+id/soundButton_01"
+        android:id="@+id/buttonSoundVert_01"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_02"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp"
-        app:layout_constraintHorizontal_bias="0.946" />
+        android:text=""
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="39dp" />
 
     <Button
-        android:id="@+id/soundButton_02"
+        android:id="@+id/buttonSoundVert_02"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp" />
+        android:layout_alignTop="@+id/buttonSoundVert_01"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/buttonSoundVert_01"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_03"
+        android:id="@+id/buttonSoundVert_03"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_04"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_01" />
+        android:layout_alignStart="@+id/buttonSoundVert_01"
+        android:layout_below="@+id/buttonSoundVert_01"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_04"
+        android:id="@+id/buttonSoundVert_04"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_02" />
+        android:layout_alignStart="@+id/buttonSoundVert_02"
+        android:layout_below="@+id/buttonSoundVert_02"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_05"
+        android:id="@+id/buttonSoundVert_05"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_06"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_03"
-        app:layout_constraintHorizontal_bias="0.946" />
+        android:layout_alignStart="@+id/buttonSoundVert_03"
+        android:layout_below="@+id/buttonSoundVert_03"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_06"
+        android:id="@+id/buttonSoundVert_06"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="1dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_04" />
+        android:layout_alignStart="@+id/buttonSoundVert_04"
+        android:layout_below="@+id/buttonSoundVert_04"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_07"
+        android:id="@+id/buttonSoundVert_07"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_08"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="1dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_05"
-        app:layout_constraintHorizontal_bias="0.946" />
+        android:layout_alignStart="@+id/buttonSoundVert_05"
+        android:layout_below="@+id/buttonSoundVert_05"
+        android:text="" />
 
     <Button
-        android:id="@+id/soundButton_08"
+        android:id="@+id/buttonSoundVert_08"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="1dp"
-        app:layout_constraintTop_toBottomOf="@+id/soundButton_06" />
-
-    <Button
-        android:id="@+id/padSelectButton"
-        android:layout_width="85dp"
-        android:layout_height="76dp"
-        android:text="Pad Select Mode"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_01"
-        android:layout_marginRight="13dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="70dp" />
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="85dp"
-        android:layout_height="52dp"
-        android:text="Save Kit"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/padSelectButton"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_01"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0" />
-
-    <Button
-        android:id="@+id/loadButton"
-        android:layout_width="85dp"
-        android:layout_height="52dp"
-        android:text="Load Kit"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/saveButton"
-        app:layout_constraintRight_toLeftOf="@+id/soundButton_03"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0" />
+        android:layout_alignStart="@+id/buttonSoundVert_06"
+        android:layout_below="@+id/buttonSoundVert_06"
+        android:text="" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sample Music App"
-        android:textSize="25sp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.503" />
-</android.support.constraint.ConstraintLayout>
+        android:text="Sample Music"
+        android:textSize="26sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp" />
+
+    <Button
+        android:id="@+id/padSelectMode_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pad SElect Mode"
+        android:layout_alignTop="@+id/buttonSoundVert_01"
+        android:layout_alignEnd="@+id/save_btn"
+        android:layout_alignStart="@+id/save_btn" />
+
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/padSelectMode_btn"
+        android:layout_marginStart="14dp"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/load_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/save_btn"
+        android:layout_below="@+id/save_btn"
+        android:text="Load" />
+
+</android.widget.RelativeLayout>
