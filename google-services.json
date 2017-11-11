@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "835006956894",
+    "firebase_url": "https://samplemusicapp-43580.firebaseio.com",
+    "project_id": "samplemusicapp-43580",
+    "storage_bucket": "samplemusicapp-43580.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835006956894:android:dde319a4fa2b2fe1",
+        "android_client_info": {
+          "package_name": "edu.cmich.place1l.samplemusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835006956894-rjlfvgue9fvgdhmn859mk9iu7esu55no.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJ6LiO-JuwS4Fo3KAhcgAiWwctx_W8Es"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
