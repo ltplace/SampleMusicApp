@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/buttonSoundHor_01"
+        android:id="@+id/buttonSound_01"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="101dp"
@@ -13,95 +13,95 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/buttonSoundHor_02"
+        android:id="@+id/buttonSound_02"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundHor_01"
-        android:layout_below="@+id/buttonSoundHor_01"
+        android:layout_alignStart="@+id/buttonSound_01"
+        android:layout_below="@+id/buttonSound_01"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_03"
+        android:id="@+id/buttonSound_03"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignTop="@+id/buttonSoundHor_01"
-        android:layout_toEndOf="@+id/buttonSoundHor_01"
+        android:layout_alignTop="@+id/buttonSound_01"
+        android:layout_toEndOf="@+id/buttonSound_01"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_04"
+        android:id="@+id/buttonSound_04"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/buttonSoundHor_01"
-        android:layout_toEndOf="@+id/buttonSoundHor_01"
+        android:layout_below="@+id/buttonSound_01"
+        android:layout_toEndOf="@+id/buttonSound_01"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_05"
+        android:id="@+id/buttonSound_05"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignTop="@+id/buttonSoundHor_03"
-        android:layout_toEndOf="@+id/buttonSoundHor_03"
+        android:layout_alignTop="@+id/buttonSound_03"
+        android:layout_toEndOf="@+id/buttonSound_03"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_06"
+        android:id="@+id/buttonSound_06"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/buttonSoundHor_05"
-        android:layout_toEndOf="@+id/buttonSoundHor_04"
+        android:layout_below="@+id/buttonSound_05"
+        android:layout_toEndOf="@+id/buttonSound_04"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_07"
+        android:id="@+id/buttonSound_07"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignTop="@+id/buttonSoundHor_05"
-        android:layout_toEndOf="@+id/buttonSoundHor_05"
+        android:layout_alignTop="@+id/buttonSound_05"
+        android:layout_toEndOf="@+id/buttonSound_05"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundHor_08"
+        android:id="@+id/buttonSound_08"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/buttonSoundHor_07"
-        android:layout_toEndOf="@+id/buttonSoundHor_06"
+        android:layout_below="@+id/buttonSound_07"
+        android:layout_toEndOf="@+id/buttonSound_06"
         android:text="" />
 
     <Button
-        android:id="@+id/padSelectMode_btnHor"
+        android:id="@+id/padSelectMode_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/buttonSoundHor_01"
+        android:layout_alignTop="@+id/buttonSound_01"
         android:text="Pad Select Mode"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/buttonSoundHor_02" />
+        android:layout_toStartOf="@+id/buttonSound_02" />
 
     <Button
-        android:id="@+id/save_btnHor"
+        android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_below="@+id/padSelectMode_btnHor"
-        android:layout_alignEnd="@+id/padSelectMode_btnHor"
+        android:layout_below="@+id/padSelectMode_btn"
+        android:layout_alignEnd="@+id/padSelectMode_btn"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/load_btnHor"
+        android:id="@+id/load_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonSoundHor_01"
+        android:layout_below="@+id/buttonSound_01"
         android:text="Load"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/buttonSoundHor_02" />
+        android:layout_toStartOf="@+id/buttonSound_02" />
 
     <TextView
-        android:id="@+id/sampleMusic_textViewHor"
+        android:id="@+id/sampleMusic_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sample Music"
         android:textSize="26sp"
         android:layout_marginBottom="24dp"
-        android:layout_above="@+id/buttonSoundHor_03"
+        android:layout_above="@+id/buttonSound_03"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

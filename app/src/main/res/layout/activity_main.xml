@@ -8,69 +8,69 @@
 
 
     <Button
-        android:id="@+id/buttonSoundVert_01"
+        android:id="@+id/buttonSound_01"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:text=""
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="39dp" />
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/sampleMusic_textView"
+        android:layout_alignStart="@+id/sampleMusic_textView" />
 
     <Button
-        android:id="@+id/buttonSoundVert_02"
+        android:id="@+id/buttonSound_02"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignTop="@+id/buttonSoundVert_01"
+        android:layout_alignTop="@+id/buttonSound_01"
         android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/buttonSoundVert_01"
+        android:layout_toEndOf="@+id/buttonSound_01"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_03"
+        android:id="@+id/buttonSound_03"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_01"
-        android:layout_below="@+id/buttonSoundVert_01"
+        android:layout_alignStart="@+id/buttonSound_01"
+        android:layout_below="@+id/buttonSound_01"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_04"
+        android:id="@+id/buttonSound_04"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_02"
-        android:layout_below="@+id/buttonSoundVert_02"
+        android:layout_alignStart="@+id/buttonSound_02"
+        android:layout_below="@+id/buttonSound_02"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_05"
+        android:id="@+id/buttonSound_05"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_03"
-        android:layout_below="@+id/buttonSoundVert_03"
+        android:layout_alignStart="@+id/buttonSound_03"
+        android:layout_below="@+id/buttonSound_03"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_06"
+        android:id="@+id/buttonSound_06"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_04"
-        android:layout_below="@+id/buttonSoundVert_04"
+        android:layout_alignStart="@+id/buttonSound_04"
+        android:layout_below="@+id/buttonSound_04"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_07"
+        android:id="@+id/buttonSound_07"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_05"
-        android:layout_below="@+id/buttonSoundVert_05"
+        android:layout_alignStart="@+id/buttonSound_05"
+        android:layout_below="@+id/buttonSound_05"
         android:text="" />
 
     <Button
-        android:id="@+id/buttonSoundVert_08"
+        android:id="@+id/buttonSound_08"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSoundVert_06"
-        android:layout_below="@+id/buttonSoundVert_06"
+        android:layout_alignStart="@+id/buttonSound_06"
+        android:layout_below="@+id/buttonSound_06"
         android:text="" />
 
     <TextView
@@ -87,8 +87,8 @@
         android:id="@+id/padSelectMode_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pad SElect Mode"
-        android:layout_alignTop="@+id/buttonSoundVert_01"
+        android:text="Pad Select Mode"
+        android:layout_alignTop="@+id/buttonSound_01"
         android:layout_alignEnd="@+id/save_btn"
         android:layout_alignStart="@+id/save_btn" />
 
