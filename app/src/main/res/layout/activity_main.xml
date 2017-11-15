@@ -11,10 +11,11 @@
         android:id="@+id/buttonSound_01"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:text=""
-        android:layout_marginTop="25dp"
+        android:layout_alignStart="@+id/sampleMusic_textView"
         android:layout_below="@+id/sampleMusic_textView"
-        android:layout_alignStart="@+id/sampleMusic_textView" />
+        android:layout_marginTop="25dp"
+        android:onClick="doBtnClick1"
+        android:text="" />
 
     <Button
         android:id="@+id/buttonSound_02"
@@ -23,6 +24,7 @@
         android:layout_alignTop="@+id/buttonSound_01"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/buttonSound_01"
+        android:onClick="doBtnClick2"
         android:text="" />
 
     <Button
@@ -31,6 +33,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_01"
         android:layout_below="@+id/buttonSound_01"
+        android:onClick="doBtnClick3"
         android:text="" />
 
     <Button
@@ -39,6 +42,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_02"
         android:layout_below="@+id/buttonSound_02"
+        android:onClick="doBtnClick4"
         android:text="" />
 
     <Button
@@ -47,6 +51,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_03"
         android:layout_below="@+id/buttonSound_03"
+        android:onClick="doBtnClick5"
         android:text="" />
 
     <Button
@@ -55,6 +60,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_04"
         android:layout_below="@+id/buttonSound_04"
+        android:onClick="doBtnClick6"
         android:text="" />
 
     <Button
@@ -63,6 +69,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_05"
         android:layout_below="@+id/buttonSound_05"
+        android:onClick="doBtnClick7"
         android:text="" />
 
     <Button
@@ -71,6 +78,7 @@
         android:layout_height="120dp"
         android:layout_alignStart="@+id/buttonSound_06"
         android:layout_below="@+id/buttonSound_06"
+        android:onClick="doBtnClick8"
         android:text="" />
 
     <TextView
