@@ -92,22 +92,22 @@
         android:layout_marginTop="13dp" />
 
     <Button
-        android:id="@+id/padSelectMode_btn"
+        android:id="@+id/sampleLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pad Select Mode"
-        android:layout_alignTop="@+id/buttonSound_01"
         android:layout_alignEnd="@+id/save_btn"
-        android:layout_alignStart="@+id/save_btn" />
+        android:layout_alignStart="@+id/save_btn"
+        android:layout_alignTop="@+id/buttonSound_01"
+        android:text="Sample Loading Page" />
 
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/padSelectMode_btn"
+        android:layout_below="@+id/sampleLoad"
         android:layout_marginStart="14dp"
-        android:text="Save" />
+        android:text="Save Kit" />
 
     <Button
         android:id="@+id/load_btn"
@@ -115,6 +115,6 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/save_btn"
         android:layout_below="@+id/save_btn"
-        android:text="Load" />
+        android:text="Load Kit" />
 
 </android.widget.RelativeLayout>
