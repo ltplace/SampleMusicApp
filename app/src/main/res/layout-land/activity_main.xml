@@ -83,6 +83,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/buttonSound_01"
         android:layout_toStartOf="@+id/buttonSound_02"
+        android:onClick="doSampleLoadingPage"
         android:text="Sample Loading Page" />
 
     <Button

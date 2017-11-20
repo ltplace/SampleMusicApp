@@ -98,6 +98,7 @@
         android:layout_alignEnd="@+id/save_btn"
         android:layout_alignStart="@+id/save_btn"
         android:layout_alignTop="@+id/buttonSound_01"
+        android:onClick="doSampleLoadingPage"
         android:text="Sample Loading Page" />
 
     <Button

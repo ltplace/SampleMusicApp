@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context="edu.cmich.place1l.samplemusic.SampleLoadingPage">
 
+    <ImageButton
+        android:id="@+id/playIcon_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_media_play"
+        android:layout_below="@+id/playIcon_2"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/playIcon_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="104dp"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/playIcon_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/playIcon_1"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/playIcon_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/playIcon_3"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <TextView
+        android:id="@+id/audioText_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:text="clap909"
+        android:textSize="18sp"
+        android:layout_above="@+id/playIcon_1"
+        android:layout_toEndOf="@+id/playIcon_2"
+        android:layout_marginStart="12dp" />
 </RelativeLayout>
