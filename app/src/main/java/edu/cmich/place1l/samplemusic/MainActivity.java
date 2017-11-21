@@ -1,6 +1,7 @@
 package edu.cmich.place1l.samplemusic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,7 +48,6 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
     }
-
     public void doBtnClick2(View view) {
         try {
             if (mp2.isPlaying()) {
@@ -138,6 +138,11 @@ public class MainActivity extends Activity {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void doSampleLoadingPage(View view){
+        Intent intent = new Intent(this, SampleLoadingPage.class);
+        startActivity(intent);
     }
 
 }
