@@ -2,9 +2,11 @@ package edu.cmich.place1l.samplemusic;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -86,14 +88,14 @@ public class SampleLoadingPage extends AppCompatActivity {
         pad7 = fullPath + spinner7.getSelectedItem().toString();
         pad8 = fullPath + spinner8.getSelectedItem().toString();
 
-//        mp1 = MediaPlayer.create(this, R.raw.clap909);
-//        mp2 = MediaPlayer.create(this, R.raw.snare909);
-//        mp3 = MediaPlayer.create(this, R.raw.kick909);
-//        mp4 = MediaPlayer.create(this, R.raw.oh909);
-//        mp5 = MediaPlayer.create(this, R.raw.tomhigh);
-//        mp6 = MediaPlayer.create(this, R.raw.tommid);
-//        mp7 = MediaPlayer.create(this, R.raw.tomlow);
-//        mp8 = MediaPlayer.create(this, R.raw.ride909);
+        mp1 = MediaPlayer.create(this, Uri.parse(pad1));
+        mp2 = MediaPlayer.create(this, Uri.parse(pad2));
+        mp3 = MediaPlayer.create(this, Uri.parse(pad3));
+        mp4 = MediaPlayer.create(this, Uri.parse(pad4));
+        mp5 = MediaPlayer.create(this, Uri.parse(pad5));
+        mp6 = MediaPlayer.create(this, Uri.parse(pad6));
+        mp7 = MediaPlayer.create(this, Uri.parse(pad7));
+        mp8 = MediaPlayer.create(this, Uri.parse(pad8));
     }
 
     AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
@@ -106,7 +108,7 @@ public class SampleLoadingPage extends AppCompatActivity {
                     Toast.makeText(SampleLoadingPage.this, "a", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.padSelect_spinner2:
-                    Spinner spinner2 = findViewById(R.id.padSelect_spinner1);
+                    Spinner spinner2 = findViewById(R.id.padSelect_spinner2);
                     pad2 = fullPath + spinner2.getSelectedItem().toString();
                     Toast.makeText(SampleLoadingPage.this, "b", Toast.LENGTH_SHORT).show();
                     break;
@@ -179,110 +181,126 @@ public class SampleLoadingPage extends AppCompatActivity {
         pad8 = fullPath + spinner8.getSelectedItem().toString();
     }
 
-//    public void doBtnClick1(View view) {
-//        try {
-//            if (mp1.isPlaying()) {
-//                mp1.stop();
-//                mp1.release();
-//                mp1 = MediaPlayer.create(this, R.raw.clap909);
-//            } mp1.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick2(View view) {
-//        try {
-//            if (mp2.isPlaying()) {
-//                mp2.stop();
-//                mp2.release();
-//                mp2 = MediaPlayer.create(this, R.raw.kick909);
-//            } mp2.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick3(View view) {
-//        try {
-//            if (mp3.isPlaying()) {
-//                mp3.stop();
-//                mp3.release();
-//                mp3 = MediaPlayer.create(this, R.raw.oh909);
-//            } mp3.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick4(View view) {
-//        try {
-//            if (mp4.isPlaying()) {
-//                mp4.stop();
-//                mp4.release();
-//                mp4 = MediaPlayer.create(this, R.raw.ride909);
-//            } mp4.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick5(View view) {
-//        try {
-//            if (mp5.isPlaying()) {
-//                mp5.stop();
-//                mp5.release();
-//                mp5 = MediaPlayer.create(this, R.raw.snare909);
-//            } mp5.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick6(View view) {
-//        try {
-//            if (mp6.isPlaying()) {
-//                mp6.stop();
-//                mp6.release();
-//                mp6 = MediaPlayer.create(this, R.raw.tomhigh);
-//            } mp6.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick7(View view) {
-//        try {
-//            if (mp7.isPlaying()) {
-//                mp7.stop();
-//                mp7.release();
-//                mp7 = MediaPlayer.create(this, R.raw.tomlow);
-//            } mp7.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    public void doBtnClick8(View view) {
-//        try {
-//            if (mp8.isPlaying()) {
-//                mp8.stop();
-//                mp8.release();
-//                mp8 = MediaPlayer.create(this, R.raw.tommid);
-//            } mp8.start();
-//            Log.d("PLAYED", "PLAYED");
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void doBtnClick1(View view) {
+        try {
+            if (mp1.isPlaying()) {
+                mp1.stop();
+                mp1.release();
+                mp1 = MediaPlayer.create(this, Uri.parse(pad1));
+            }
+            mp1 = MediaPlayer.create(this, Uri.parse(pad1));
+            mp1.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick2(View view) {
+        try {
+            if (mp2.isPlaying()) {
+                mp2.stop();
+                mp2.release();
+                mp2 = MediaPlayer.create(this, Uri.parse(pad2));
+            }
+            mp2 = MediaPlayer.create(this, Uri.parse(pad2));
+            mp2.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick3(View view) {
+        try {
+            if (mp3.isPlaying()) {
+                mp3.stop();
+                mp3.release();
+                mp3 = MediaPlayer.create(this, Uri.parse(pad3));
+            }
+            mp3 = MediaPlayer.create(this, Uri.parse(pad3));
+            mp3.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick4(View view) {
+        try {
+            if (mp4.isPlaying()) {
+                mp4.stop();
+                mp4.release();
+                mp4 = MediaPlayer.create(this, Uri.parse(pad4));
+            }
+            mp4 = MediaPlayer.create(this, Uri.parse(pad4));
+            mp4.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick5(View view) {
+        try {
+            if (mp5.isPlaying()) {
+                mp5.stop();
+                mp5.release();
+                mp5 = MediaPlayer.create(this, Uri.parse(pad5));
+            }
+            mp5 = MediaPlayer.create(this, Uri.parse(pad5));
+            mp5.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick6(View view) {
+        try {
+            if (mp6.isPlaying()) {
+                mp6.stop();
+                mp6.release();
+                mp6 = MediaPlayer.create(this, Uri.parse(pad6));
+            }
+            mp6 = MediaPlayer.create(this, Uri.parse(pad6));
+            mp6.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick7(View view) {
+        try {
+            if (mp7.isPlaying()) {
+                mp7.stop();
+                mp7.release();
+                mp7 = MediaPlayer.create(this, Uri.parse(pad7));
+            }
+            mp7 = MediaPlayer.create(this, Uri.parse(pad7));
+            mp7.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void doBtnClick8(View view) {
+        try {
+            if (mp8.isPlaying()) {
+                mp8.stop();
+                mp8.release();
+                mp8 = MediaPlayer.create(this, Uri.parse(pad8));
+            }
+            mp8 = MediaPlayer.create(this, Uri.parse(pad8));
+            mp8.start();
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void saveButton(View view) {
