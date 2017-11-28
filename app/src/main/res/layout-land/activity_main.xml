@@ -11,7 +11,9 @@
         android:layout_marginStart="101dp"
         android:layout_marginTop="80dp"
         android:onClick="doBtnClick1"
-        android:text="" />
+        android:text="1"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_02"
@@ -20,7 +22,9 @@
         android:layout_alignStart="@+id/buttonSound_01"
         android:layout_below="@+id/buttonSound_01"
         android:onClick="doBtnClick2"
-        android:text="" />
+        android:text="2"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_03"
@@ -29,7 +33,9 @@
         android:layout_alignTop="@+id/buttonSound_01"
         android:layout_toEndOf="@+id/buttonSound_01"
         android:onClick="doBtnClick3"
-        android:text="" />
+        android:text="3"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_04"
@@ -38,7 +44,9 @@
         android:layout_below="@+id/buttonSound_01"
         android:layout_toEndOf="@+id/buttonSound_01"
         android:onClick="doBtnClick4"
-        android:text="" />
+        android:text="4"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_05"
@@ -47,7 +55,9 @@
         android:layout_alignTop="@+id/buttonSound_03"
         android:layout_toEndOf="@+id/buttonSound_03"
         android:onClick="doBtnClick5"
-        android:text="" />
+        android:text="5"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_06"
@@ -56,7 +66,9 @@
         android:layout_below="@+id/buttonSound_05"
         android:layout_toEndOf="@+id/buttonSound_04"
         android:onClick="doBtnClick6"
-        android:text="" />
+        android:text="6"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_07"
@@ -65,7 +77,9 @@
         android:layout_alignTop="@+id/buttonSound_05"
         android:layout_toEndOf="@+id/buttonSound_05"
         android:onClick="doBtnClick7"
-        android:text="" />
+        android:text="7"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/buttonSound_08"
@@ -74,7 +88,9 @@
         android:layout_below="@+id/buttonSound_07"
         android:layout_toEndOf="@+id/buttonSound_06"
         android:onClick="doBtnClick8"
-        android:text="" />
+        android:text="8"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
 
     <Button
         android:id="@+id/sampleLoad"
