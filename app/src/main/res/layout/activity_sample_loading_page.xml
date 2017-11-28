@@ -94,12 +94,12 @@
         android:id="@+id/audioText_textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
-        android:text="clap909"
-        android:textSize="18sp"
         android:layout_above="@+id/playIcon_1"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="12dp"
         android:layout_toEndOf="@+id/playIcon_2"
-        android:layout_marginStart="12dp" />
+        android:text="pad1"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView2"
@@ -108,8 +108,8 @@
         android:layout_above="@+id/playIcon_3"
         android:layout_alignStart="@+id/audioText_textView1"
         android:layout_marginBottom="15dp"
-        android:text="kick909"
-        android:textSize="18sp"/>
+        android:text="pad2"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView3"
@@ -118,8 +118,8 @@
         android:layout_above="@+id/playIcon_4"
         android:layout_alignStart="@+id/audioText_textView2"
         android:layout_marginBottom="14dp"
-        android:text="oh909"
-        android:textSize="18sp"/>
+        android:text="pad3"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView4"
@@ -128,8 +128,8 @@
         android:layout_above="@+id/playIcon_5"
         android:layout_alignStart="@+id/audioText_textView3"
         android:layout_marginBottom="12dp"
-        android:text="ride909"
-        android:textSize="18sp"/>
+        android:text="pad4"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView5"
@@ -138,8 +138,8 @@
         android:layout_above="@+id/playIcon_6"
         android:layout_alignStart="@+id/audioText_textView4"
         android:layout_marginBottom="15dp"
-        android:text="snare909"
-        android:textSize="18sp"/>
+        android:text="pad5"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView6"
@@ -148,8 +148,8 @@
         android:layout_above="@+id/playIcon_7"
         android:layout_alignStart="@+id/audioText_textView5"
         android:layout_marginBottom="14dp"
-        android:text="tomhigh"
-        android:textSize="18sp"/>
+        android:text="pad6"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView7"
@@ -158,8 +158,8 @@
         android:layout_above="@+id/playIcon_8"
         android:layout_alignStart="@+id/audioText_textView6"
         android:layout_marginBottom="15dp"
-        android:text="tomlow"
-        android:textSize="18sp"/>
+        android:text="pad7"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/audioText_textView8"
@@ -168,9 +168,8 @@
         android:layout_alignBottom="@+id/playIcon_8"
         android:layout_alignEnd="@+id/audioText_textView2"
         android:layout_marginBottom="16dp"
-        android:text="tommid"
-        android:textSize="18sp"
-    />
+        android:text="pad8"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/name_textView"
@@ -192,15 +191,15 @@
         android:textSize="18sp"/>
 
     <Spinner
-        android:id="@+id/padSelect_spinner1"
+        android:id="@+id/padSelect_spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/audioText_textView2"
+        android:layout_alignEnd="@+id/padSelect_spinner1"
         android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/padSelect_spinner2" />
+        android:layout_alignTop="@+id/audioText_textView2" />
 
     <Spinner
-        android:id="@+id/padSelect_spinner2"
+        android:id="@+id/padSelect_spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/audioText_textView1"
@@ -211,10 +210,11 @@
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_below="@+id/audioText_textView8"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="24dp" />
+        android:layout_below="@+id/audioText_textView8"
+        android:layout_marginEnd="24dp"
+        android:onClick="saveButton"
+        android:text="Save" />
 
     <Spinner
         android:id="@+id/padSelect_spinner3"
@@ -229,7 +229,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/audioText_textView4"
-        android:layout_alignStart="@+id/padSelect_spinner2"
+        android:layout_alignStart="@+id/padSelect_spinner1"
         android:layout_alignEnd="@+id/padSelect_spinner5" />
 
     <Spinner
