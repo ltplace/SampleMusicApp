@@ -295,7 +295,7 @@ These next 8 methods are button clicks for each pad
                         }
                 }
                 kitHash.put(s, saveKitFiles.toString());
-//                Log.d("kitHash", kitHash.toString());
+                Log.d("kitHash", kitHash.toString());
 //                Log.d("KITFILE", kitFile.toString());
                 try {
                     for (HashMap.Entry<String,String> entry : kitHash.entrySet()) {
@@ -348,30 +348,31 @@ These next 8 methods are button clicks for each pad
             public void onClick(DialogInterface dialog, int which) {
                 try{
                     String[] list = kitHash.get(s[0]).split(",");
-//                    Log.d("kit in onclick", kitHash.get(s[0]));
-//                    Log.d("list[0]", list[0]);
-//                    Log.d("list[1]", list[1]);
-//                    Log.d("list[7]", list[7]);
-//                    Log.d("files.0.before", files.get(0));
-//                    Log.d("files.1.before", files.get(1));
-                    files.add(0, list[0].replace("[", ""));
+                    for(int k = 0; k < 8; k++){
+                        list[k] = list[k].replaceAll("\\s+",".");
+                        list[k] = list[k].replaceAll( "[\\[\\](){}]", "");
+                        list[k] = list[k].trim();
+                        Log.d(String.valueOf(k), list[k]);
+                    }
+                    files.add(0, list[0]);
                     files.add(1, list[1]);
-                    Log.d("files.1", files.get(1));
-                    files.add(2, list[2].toString());
-                    files.add(3, list[3].toString());
-                    files.add(4, list[4].toString());
-                    files.add(5, list[5].toString());
-                    files.add(6, list[6].toString());
-                    files.add(7, list[7].replace("]", "").toString());
-//                    Log.d("files.0", files.get(0).toString());
-//                    Log.d("files.1", files.get(1).toString());
-//                    Log.d("files.1", files.get(2).toString());
-//                    Log.d("files.1", files.get(3).toString());
-//                    Log.d("files.1", files.get(4).toString());
-//                    Log.d("files.1", files.get(5).toString());
-//                    Log.d("files.1", files.get(6).toString());
-//                    Log.d("files.1", files.get(7).toString());
-
+                    files.add(2, list[2]);
+                    files.add(3, list[3]);
+                    files.add(4, list[4]);
+                    files.add(5, list[5]);
+                    files.add(6, list[6]);
+                    files.add(7, list[7]);
+                    //change the media players' data source
+                    try {
+                        mp1 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(0)));
+                        mp2 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(1)));
+                        mp3 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(2)));
+                        mp4 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(3)));
+                        mp5 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(4)));
+                        mp6 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(5)));
+                        mp7 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(6)));
+                        mp8 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(7)));
+                    }catch(Exception e){}
                 }catch(Exception e){
                     files.add(0, trueFiles.get(0));
                     files.add(1, trueFiles.get(1));
@@ -398,24 +399,5 @@ These next 8 methods are button clicks for each pad
 //        Log.d("YEP",files.get(5));
 //        Log.d("YEP",files.get(6));
 //        Log.d("YEP",files.get(7));
-//change the media players' data source
-        try {
-            mp1.release();
-            mp2.release();
-            mp3.release();
-            mp4.release();
-            mp5.release();
-            mp6.release();
-            mp7.release();
-            mp8.release();
-            mp1.setDataSource(this, Uri.parse(files.get(0)));
-            mp2.setDataSource(this, Uri.parse(files.get(1)));
-            mp3.setDataSource(this, Uri.parse(files.get(2)));
-            mp4.setDataSource(this, Uri.parse(files.get(3)));
-            mp5.setDataSource(this, Uri.parse(files.get(4)));
-            mp6.setDataSource(this, Uri.parse(files.get(5)));
-            mp7.setDataSource(this, Uri.parse(files.get(6)));
-            mp8.setDataSource(this, Uri.parse(files.get(7)));
-        }catch(IOException e){}
     }
 }
