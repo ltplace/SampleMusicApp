@@ -262,6 +262,7 @@ These next 8 methods are button clicks for each pad
             files.add(5, secondFiles.get(5));
             files.add(6, secondFiles.get(6));
             files.add(7, secondFiles.get(7));
+
             Log.d("files.0", files.get(0));
         }
         catch(Exception e){
@@ -349,7 +350,7 @@ These next 8 methods are button clicks for each pad
                 try{
                     String[] list = kitHash.get(s[0]).split(",");
                     for(int k = 0; k < 8; k++){
-                        list[k] = list[k].replaceAll("\\s+",".");
+                        list[k] = list[k].replaceAll("\\s+","");
                         list[k] = list[k].replaceAll( "[\\[\\](){}]", "");
                         list[k] = list[k].trim();
                         Log.d(String.valueOf(k), list[k]);
@@ -362,6 +363,7 @@ These next 8 methods are button clicks for each pad
                     files.add(5, list[5]);
                     files.add(6, list[6]);
                     files.add(7, list[7]);
+
                     //change the media players' data source
                     try {
                         mp1 = MediaPlayer.create(MainActivity.this, Uri.parse(files.get(0)));

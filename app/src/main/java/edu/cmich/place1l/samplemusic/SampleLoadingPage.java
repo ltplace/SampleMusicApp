@@ -44,6 +44,9 @@ public class SampleLoadingPage extends AppCompatActivity {
     protected File musicFolder = new File(fullPath);
     public ArrayList<String> secondFiles = new ArrayList<String>();
     public ArrayList<String> filenames = new ArrayList<String>();
+    public ArrayList<String> files = new ArrayList<String>();
+    public ArrayList<String> extrafiles = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,11 @@ public class SampleLoadingPage extends AppCompatActivity {
         setContentView(R.layout.activity_sample_loading_page);
         Intent intent = getIntent();
         filenames = intent.getStringArrayListExtra("filenames");
+        files = intent.getStringArrayListExtra("files");
+        extrafiles = intent.getStringArrayListExtra("files");
+        for(int i = 0; i < 8; i++){
+            extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+        }
         Spinner spinner1 = findViewById(R.id.padSelect_spinner1);
         Spinner spinner2 = findViewById(R.id.padSelect_spinner2);
         Spinner spinner3 = findViewById(R.id.padSelect_spinner3);
@@ -148,6 +156,12 @@ public class SampleLoadingPage extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Intent intent = getIntent();
+        files = intent.getStringArrayListExtra("files");
+
+        extrafiles = intent.getStringArrayListExtra("files");
+        for(int i = 0; i < 8; i++){
+            extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+        }
         filenames = intent.getStringArrayListExtra("filenames");
         Spinner spinner1 = (Spinner)findViewById(R.id.padSelect_spinner1);
         Spinner spinner2 = (Spinner)findViewById(R.id.padSelect_spinner2);
@@ -168,6 +182,25 @@ public class SampleLoadingPage extends AppCompatActivity {
         spinner6.setAdapter(adapter);
         spinner7.setAdapter(adapter);
         spinner8.setAdapter(adapter);
+
+        int spinner1pos = adapter.getPosition(extrafiles.get(0));
+        spinner1.setSelection(spinner1pos);
+        int spinner2pos = adapter.getPosition(extrafiles.get(1));
+        spinner2.setSelection(spinner2pos);
+        int spinner3pos = adapter.getPosition(extrafiles.get(2));
+        spinner3.setSelection(spinner3pos);
+        int spinner4pos = adapter.getPosition(extrafiles.get(3));
+        spinner4.setSelection(spinner4pos);
+        int spinner5pos = adapter.getPosition(extrafiles.get(4));
+        spinner5.setSelection(spinner5pos);
+        int spinner6pos = adapter.getPosition(extrafiles.get(5));
+        spinner6.setSelection(spinner6pos);
+        int spinner7pos = adapter.getPosition(extrafiles.get(6));
+        spinner7.setSelection(spinner4pos);
+        int spinner8pos = adapter.getPosition(extrafiles.get(7));
+        spinner7.setSelection(spinner7pos);
+
+
 
         pad1 = fullPath + spinner1.getSelectedItem().toString();
         pad2 = fullPath + spinner2.getSelectedItem().toString();
