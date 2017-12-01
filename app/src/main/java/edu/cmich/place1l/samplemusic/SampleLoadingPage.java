@@ -1,5 +1,6 @@
 package edu.cmich.place1l.samplemusic;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -105,17 +106,14 @@ public class SampleLoadingPage extends AppCompatActivity {
                 case R.id.padSelect_spinner1:
                     Spinner spinner1 = findViewById(R.id.padSelect_spinner1);
                     pad1 = fullPath + spinner1.getSelectedItem().toString();
-                    Toast.makeText(SampleLoadingPage.this, "a", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.padSelect_spinner2:
                     Spinner spinner2 = findViewById(R.id.padSelect_spinner2);
                     pad2 = fullPath + spinner2.getSelectedItem().toString();
-                    Toast.makeText(SampleLoadingPage.this, "b", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.padSelect_spinner3:
                     Spinner spinner3 = findViewById(R.id.padSelect_spinner3);
                     pad3 = fullPath + spinner3.getSelectedItem().toString();
-                    Toast.makeText(SampleLoadingPage.this, "c", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.padSelect_spinner4:
                     Spinner spinner4 = findViewById(R.id.padSelect_spinner4);
