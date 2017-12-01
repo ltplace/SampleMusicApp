@@ -391,13 +391,5 @@ These next 8 methods are button clicks for each pad
 
     public void loadKitButton(View view){
         loadKit(view);
-//        Log.d("YEP",files.get(0));
-//        Log.d("YEP",files.get(1));
-//        Log.d("YEP",files.get(2));
-//        Log.d("YEP",files.get(3));
-//        Log.d("YEP",files.get(4));
-//        Log.d("YEP",files.get(5));
-//        Log.d("YEP",files.get(6));
-//        Log.d("YEP",files.get(7));
     }
 }
