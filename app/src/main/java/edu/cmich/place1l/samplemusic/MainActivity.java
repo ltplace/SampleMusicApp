@@ -53,6 +53,8 @@ public class MainActivity extends Activity {
     protected String fullPath = sdcardPath + "/Music/";
     //music folder as file object
     protected File musicFolder = new File(fullPath);
+    protected File[] contents = musicFolder.listFiles();
+
     File kitFilePath = new File(sdcardPath + "/Kits");
     File kitFile = new File(kitFilePath + "/kits");
     Properties properties = new Properties();
@@ -61,25 +63,65 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         String[] s = musicFolder.list();
         kitFilePath.mkdir();
-        for(int i = 0; i < s.length; i++){
-//            files.add(s[i]);
-            Log.d("s", s[i]);
-            files.add(fullPath + s[i]);
-            trueFiles.add(fullPath + s[i]);
-            filenames.add(s[i]);
+        Log.d("CONTENTS LENGTH", String.valueOf(contents.length));
+        for(int i = 0; i < contents.length; i++){
+            Log.d("CONTENT", contents[i].toString());
         }
-        Log.d("file.0", files.get(0));
+        if(contents == null || contents.length < 8){
+            files.add("");
+            files.add("");
+            files.add("");
+            files.add("");
+            files.add("");
+            files.add("");
+            files.add("");
+            files.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            trueFiles.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+            filenames.add("");
+
+            mp1 = MediaPlayer.create(this, R.raw.clap909);
+            mp2 = MediaPlayer.create(this, R.raw.kick909);
+            mp3 = MediaPlayer.create(this, R.raw.oh909);
+            mp4 = MediaPlayer.create(this, R.raw.ride909);
+            mp5 = MediaPlayer.create(this, R.raw.snare909);
+            mp6 = MediaPlayer.create(this, R.raw.tomhigh);
+            mp7 = MediaPlayer.create(this, R.raw.tomlow);
+            mp8 = MediaPlayer.create(this, R.raw.tommid);
+        }
+        else {
+            for (int i = 0; i < s.length; i++) {
+                //            files.add(s[i]);
+                Log.d("s", s[i]);
+                files.add(fullPath + s[i]);
+                trueFiles.add(fullPath + s[i]);
+                filenames.add(s[i]);
+            }
+            mp1 = MediaPlayer.create(this, Uri.parse(files.get(0)));
+            mp2 = MediaPlayer.create(this, Uri.parse(files.get(1)));
+            mp3 = MediaPlayer.create(this, Uri.parse(files.get(2)));
+            mp4 = MediaPlayer.create(this, Uri.parse(files.get(3)));
+            mp5 = MediaPlayer.create(this, Uri.parse(files.get(4)));
+            mp6 = MediaPlayer.create(this, Uri.parse(files.get(5)));
+            mp7 = MediaPlayer.create(this, Uri.parse(files.get(6)));
+            mp8 = MediaPlayer.create(this, Uri.parse(files.get(7)));
+        }
+
         //creates a mediaplayer for each pad
         //the sounds come from the files arraylist
-        mp1 = MediaPlayer.create(this, Uri.parse(files.get(0)));
-        mp2 = MediaPlayer.create(this, Uri.parse(files.get(1)));
-        mp3 = MediaPlayer.create(this, Uri.parse(files.get(2)));
-        mp4 = MediaPlayer.create(this, Uri.parse(files.get(3)));
-        mp5 = MediaPlayer.create(this, Uri.parse(files.get(4)));
-        mp6 = MediaPlayer.create(this, Uri.parse(files.get(5)));
-        mp7 = MediaPlayer.create(this, Uri.parse(files.get(6)));
-        mp8 = MediaPlayer.create(this, Uri.parse(files.get(7)));
-//        Log.d("YEP",files.get(0));
 //        Log.d("YEP",files.get(1));
 //        Log.d("YEP",files.get(2));
 //        Log.d("YEP",files.get(3));
@@ -109,10 +151,16 @@ These next 8 methods are button clicks for each pad
  */
     public void doBtnClick1(View view) {
         try {
+            Log.d("files1", files.get(0));
             if (mp1.isPlaying()) {
                 mp1.stop();
                 mp1.release();
-                mp1 = MediaPlayer.create(this, Uri.parse(files.get(0)));
+                if(contents == null || contents.length < 8) {
+                    mp1 = MediaPlayer.create(this, R.raw.clap909);
+                }
+                else {
+                    mp1 = MediaPlayer.create(this, Uri.parse(files.get(0)));
+                }
             } mp1.start();
 //            Log.d("PLAYED", "PLAYED");
 //            Log.d("FILES0", files.get(0));
@@ -127,7 +175,12 @@ These next 8 methods are button clicks for each pad
             if (mp2.isPlaying()) {
                 mp2.stop();
                 mp2.release();
-                mp2 = MediaPlayer.create(this, Uri.parse(files.get(1)));
+                if(contents == null || contents.length < 8) {
+                    mp2 = MediaPlayer.create(this, R.raw.kick909);
+                }
+                else {
+                    mp2= MediaPlayer.create(this, Uri.parse(files.get(1)));
+                }
             } mp2.start();
         }
         catch (Exception e) {
@@ -139,7 +192,12 @@ These next 8 methods are button clicks for each pad
             if (mp3.isPlaying()) {
                 mp3.stop();
                 mp3.release();
-                mp3 = MediaPlayer.create(this, Uri.parse(files.get(2)));
+                if(contents == null || contents.length < 8) {
+                    mp3 = MediaPlayer.create(this, R.raw.oh909);
+                }
+                else {
+                    mp3 = MediaPlayer.create(this, Uri.parse(files.get(2)));
+                }
             } mp3.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -152,7 +210,12 @@ These next 8 methods are button clicks for each pad
             if (mp4.isPlaying()) {
                 mp4.stop();
                 mp4.release();
-                mp4 = MediaPlayer.create(this, Uri.parse(files.get(3)));
+                if(contents == null || contents.length < 8) {
+                    mp4 = MediaPlayer.create(this, R.raw.ride909);
+                }
+                else {
+                    mp4 = MediaPlayer.create(this, Uri.parse(files.get(3)));
+                }
             } mp4.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -165,7 +228,12 @@ These next 8 methods are button clicks for each pad
             if (mp5.isPlaying()) {
                 mp5.stop();
                 mp5.release();
-                mp5 = MediaPlayer.create(this, Uri.parse(files.get(4)));
+                if(contents == null || contents.length < 8) {
+                    mp5 = MediaPlayer.create(this, R.raw.snare909);
+                }
+                else {
+                    mp5 = MediaPlayer.create(this, Uri.parse(files.get(4)));
+                }
             } mp5.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -178,7 +246,12 @@ These next 8 methods are button clicks for each pad
             if (mp6.isPlaying()) {
                 mp6.stop();
                 mp6.release();
-                mp6 = MediaPlayer.create(this, Uri.parse(files.get(5)));
+                if(contents == null || contents.length < 8) {
+                    mp6 = MediaPlayer.create(this, R.raw.tomhigh);
+                }
+                else {
+                    mp6 = MediaPlayer.create(this, Uri.parse(files.get(5)));
+                }
             } mp6.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -191,7 +264,12 @@ These next 8 methods are button clicks for each pad
             if (mp7.isPlaying()) {
                 mp7.stop();
                 mp7.release();
-                mp7 = MediaPlayer.create(this, Uri.parse(files.get(6)));
+                if(contents == null || contents.length < 8) {
+                    mp7 = MediaPlayer.create(this, R.raw.tomlow);
+                }
+                else {
+                    mp7 = MediaPlayer.create(this, Uri.parse(files.get(6)));
+                }
             } mp7.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -204,7 +282,12 @@ These next 8 methods are button clicks for each pad
             if (mp8.isPlaying()) {
                 mp8.stop();
                 mp8.release();
-                mp8 = MediaPlayer.create(this, Uri.parse(files.get(7)));
+                if(contents == null || contents.length < 8) {
+                    mp8 = MediaPlayer.create(this, R.raw.tommid);
+                }
+                else {
+                    mp8 = MediaPlayer.create(this, Uri.parse(files.get(7)));
+                }
             } mp8.start();
 //            Log.d("PLAYED", "PLAYED");
         }
@@ -236,6 +319,7 @@ These next 8 methods are button clicks for each pad
         intent.putStringArrayListExtra("filenames", filenames);
         intent.putStringArrayListExtra("trueFiles", trueFiles);
         intent.putExtra("Hashmap", kitHash);
+        intent.putExtra("contents", contents);
         startActivity(intent);
     }
 
@@ -243,30 +327,41 @@ These next 8 methods are button clicks for each pad
     protected void onResume() {
         super.onResume();
         ArrayList<String> secondFiles = getIntent().getStringArrayListExtra("secondFiles");
-        try {
-            mp1 = MediaPlayer.create(this, Uri.parse(secondFiles.get(0)));
-            mp2 = MediaPlayer.create(this, Uri.parse(secondFiles.get(1)));
-            mp3 = MediaPlayer.create(this, Uri.parse(secondFiles.get(2)));
-            mp4 = MediaPlayer.create(this, Uri.parse(secondFiles.get(3)));
-            mp5 = MediaPlayer.create(this, Uri.parse(secondFiles.get(4)));
-            mp6 = MediaPlayer.create(this, Uri.parse(secondFiles.get(5)));
-            mp7 = MediaPlayer.create(this, Uri.parse(secondFiles.get(6)));
-            mp8 = MediaPlayer.create(this, Uri.parse(secondFiles.get(7)));
+        if(contents != null && contents.length > 8) {
+            try {
+                mp1 = MediaPlayer.create(this, Uri.parse(secondFiles.get(0)));
+                mp2 = MediaPlayer.create(this, Uri.parse(secondFiles.get(1)));
+                mp3 = MediaPlayer.create(this, Uri.parse(secondFiles.get(2)));
+                mp4 = MediaPlayer.create(this, Uri.parse(secondFiles.get(3)));
+                mp5 = MediaPlayer.create(this, Uri.parse(secondFiles.get(4)));
+                mp6 = MediaPlayer.create(this, Uri.parse(secondFiles.get(5)));
+                mp7 = MediaPlayer.create(this, Uri.parse(secondFiles.get(6)));
+                mp8 = MediaPlayer.create(this, Uri.parse(secondFiles.get(7)));
 
 
-            files.add(0, secondFiles.get(0));
-            files.add(1, secondFiles.get(1));
-            files.add(2, secondFiles.get(2));
-            files.add(3, secondFiles.get(3));
-            files.add(4, secondFiles.get(4));
-            files.add(5, secondFiles.get(5));
-            files.add(6, secondFiles.get(6));
-            files.add(7, secondFiles.get(7));
+                files.add(0, secondFiles.get(0));
+                files.add(1, secondFiles.get(1));
+                files.add(2, secondFiles.get(2));
+                files.add(3, secondFiles.get(3));
+                files.add(4, secondFiles.get(4));
+                files.add(5, secondFiles.get(5));
+                files.add(6, secondFiles.get(6));
+                files.add(7, secondFiles.get(7));
 
-            Log.d("files.0", files.get(0));
+                Log.d("files.0", files.get(0));
+            } catch (Exception e) {
+
+            }
         }
-        catch(Exception e){
-
+        else{
+            mp1 = MediaPlayer.create(this, R.raw.clap909);
+            mp2 = MediaPlayer.create(this, R.raw.kick909);
+            mp3 = MediaPlayer.create(this, R.raw.oh909);
+            mp4 = MediaPlayer.create(this, R.raw.ride909);
+            mp5 = MediaPlayer.create(this, R.raw.snare909);
+            mp6 = MediaPlayer.create(this, R.raw.tomhigh);
+            mp7 = MediaPlayer.create(this, R.raw.tomlow);
+            mp8 = MediaPlayer.create(this, R.raw.tommid);
         }
         //get the kit hashmap from the file on resume
         try {

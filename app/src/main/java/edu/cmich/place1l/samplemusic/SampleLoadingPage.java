@@ -46,7 +46,7 @@ public class SampleLoadingPage extends AppCompatActivity {
     public ArrayList<String> filenames = new ArrayList<String>();
     public ArrayList<String> files = new ArrayList<String>();
     public ArrayList<String> extrafiles = new ArrayList<String>();
-
+    public File[] contents = musicFolder.listFiles();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,12 @@ public class SampleLoadingPage extends AppCompatActivity {
         files = intent.getStringArrayListExtra("files");
         extrafiles = intent.getStringArrayListExtra("files");
         for(int i = 0; i < 8; i++){
-            extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+            if(contents != null && contents.length > 8) {
+                extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+            }
+            else{
+                extrafiles.set(i, files.get(i).replace("android.resource://edu.cmich.place1l.samplemusic/", ""));
+            }
         }
         Spinner spinner1 = findViewById(R.id.padSelect_spinner1);
         Spinner spinner2 = findViewById(R.id.padSelect_spinner2);
@@ -160,7 +165,12 @@ public class SampleLoadingPage extends AppCompatActivity {
 
         extrafiles = intent.getStringArrayListExtra("files");
         for(int i = 0; i < 8; i++){
-            extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+            if(contents != null && contents.length > 8) {
+                extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+            }
+            else{
+                extrafiles.set(i, files.get(i).replace("android.resource://edu.cmich.place1l.samplemusic/", ""));
+            }
         }
         filenames = intent.getStringArrayListExtra("filenames");
         Spinner spinner1 = (Spinner)findViewById(R.id.padSelect_spinner1);
