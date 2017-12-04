@@ -49,50 +49,45 @@ public class MainActivity extends Activity {
     public HashMap<String, String> kitHash = new HashMap<>();
     //get path to sdcard as string
     protected String sdcardPath = Environment.getExternalStorageDirectory().toString();
-    //get path to Music folder
-    protected String fullPath = sdcardPath + "/Music/";
-    //music folder as file object
+    //get path to SampleMusic folder
+    protected String fullPath = sdcardPath + "/SampleMusic/";
+    //SampleMusic folder as file object
     protected File musicFolder = new File(fullPath);
     protected File[] contents = musicFolder.listFiles();
-
+    //the file path where the kits text file is saved (creates a folder in SD card called /Kits/)
     File kitFilePath = new File(sdcardPath + "/Kits");
     File kitFile = new File(kitFilePath + "/kits");
     Properties properties = new Properties();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //creates the samplemusic directory
+        //I was using /Music/ but then I realized that subfolders inside of /Music/ break the app
+        if(!musicFolder.isDirectory()){
+            musicFolder.mkdirs();
+        }
+        if(!kitFile.isDirectory()){
+            kitFile.mkdirs();
+        }
         String[] s = musicFolder.list();
         kitFilePath.mkdir();
-        Log.d("CONTENTS LENGTH", String.valueOf(contents.length));
+//        Log.d("CONTENTS LENGTH", String.valueOf(contents.length));
         for(int i = 0; i < contents.length; i++){
             Log.d("CONTENT", contents[i].toString());
         }
+        contents = musicFolder.listFiles();
+        //sets default files from /res/raw/ folder if there are no default file values
         if(contents == null || contents.length < 8){
-            files.add("");
-            files.add("");
-            files.add("");
-            files.add("");
-            files.add("");
-            files.add("");
-            files.add("");
-            files.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            trueFiles.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-            filenames.add("");
-
+            for(int i = 0; i < 8; i++){
+                files.add("");
+            }
+            for(int i = 0; i < 8; i++){
+                trueFiles.add("");
+            }
+            for(int i = 0; i < 8; i++){
+                filenames.add("");
+            }
+            //creates mediaplayer objects from those files
             mp1 = MediaPlayer.create(this, R.raw.clap909);
             mp2 = MediaPlayer.create(this, R.raw.kick909);
             mp3 = MediaPlayer.create(this, R.raw.oh909);
@@ -102,14 +97,20 @@ public class MainActivity extends Activity {
             mp7 = MediaPlayer.create(this, R.raw.tomlow);
             mp8 = MediaPlayer.create(this, R.raw.tommid);
         }
+        //if there are enough files for a kit in /SampleMusic/, it will set the pads to
+        //the first 8 files in /SampleMusic/
+        //if you don't have at least 8 files in /SampleMusic/ then the default values will be placed
+        //in that mode, you cannot edit the values in the pads (it just loads the files from /res/raw/
         else {
             for (int i = 0; i < s.length; i++) {
                 //            files.add(s[i]);
                 Log.d("s", s[i]);
+                Log.d("FULLPATH", fullPath);
                 files.add(fullPath + s[i]);
                 trueFiles.add(fullPath + s[i]);
                 filenames.add(s[i]);
             }
+            //creates MediaPlayer objects from Strings contained in the files ArrayList
             mp1 = MediaPlayer.create(this, Uri.parse(files.get(0)));
             mp2 = MediaPlayer.create(this, Uri.parse(files.get(1)));
             mp3 = MediaPlayer.create(this, Uri.parse(files.get(2)));
@@ -151,7 +152,7 @@ These next 8 methods are button clicks for each pad
  */
     public void doBtnClick1(View view) {
         try {
-            Log.d("files1", files.get(0));
+//            Log.d("files1", files.get(0));
             if (mp1.isPlaying()) {
                 mp1.stop();
                 mp1.release();
@@ -170,7 +171,7 @@ These next 8 methods are button clicks for each pad
         }
     }
     public void doBtnClick2(View view) {
-        Log.d("files2", files.get(1));
+//        Log.d("files2", files.get(1));
         try {
             if (mp2.isPlaying()) {
                 mp2.stop();
@@ -372,6 +373,7 @@ These next 8 methods are button clicks for each pad
         }catch(ClassNotFoundException | IOException c){}
     }
 
+    //controls the logic of the "name kit" dialog box that pops up when you press "save kit"
     public void nameKit() {
         LayoutInflater li = LayoutInflater.from(this);
         final View dialogView = li.inflate(R.layout.dialog, null);
@@ -384,7 +386,7 @@ These next 8 methods are button clicks for each pad
                 String s = text.getText().toString();
 //                Log.d("Kit is named", s);
                 for(int i = 0; i < 8; i++){
-//                    Log.d("SAMPLE " + String.valueOf(i), files.get(i));
+                    Log.d("SAMPLE " + String.valueOf(i), files.get(i));
                         saveKitFiles.add(i, files.get(i));
                         if(saveKitFiles.size() > 8){
                             saveKitFiles.subList(7, saveKitFiles.size()).clear();
@@ -410,7 +412,7 @@ These next 8 methods are button clicks for each pad
     public void saveKitButton(View view){
         nameKit();
     }
-
+    //controls the logic of the kit loading dialog box
     public void loadKit(View view){
         final String[] s = {""};
         LayoutInflater li = LayoutInflater.from(this);
@@ -485,8 +487,9 @@ These next 8 methods are button clicks for each pad
         });
         db.show();
     }
-
+//"Load Kit" button calls this
     public void loadKitButton(View view){
         loadKit(view);
+        Log.d("KITHASH", kitHash.toString());
     }
 }

@@ -39,7 +39,7 @@ public class SampleLoadingPage extends AppCompatActivity {
     //get path to sdcard as string
     protected String sdcardPath = Environment.getExternalStorageDirectory().toString();
     //get path to Music folder
-    protected String fullPath = sdcardPath + "/Music/";
+    protected String fullPath = sdcardPath + "/SampleMusic/";
     //music folder as file object
     protected File musicFolder = new File(fullPath);
     public ArrayList<String> secondFiles = new ArrayList<String>();
@@ -48,6 +48,9 @@ public class SampleLoadingPage extends AppCompatActivity {
     public ArrayList<String> extrafiles = new ArrayList<String>();
     public File[] contents = musicFolder.listFiles();
 
+    //This logic only really happens if you have over 8 files in the /SampleMusic/ directory
+    //In the play store description I will make it known that the app creates a folder in your SD card
+    //and that you have to add files to that folder when you decide that you want to use the app.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +61,10 @@ public class SampleLoadingPage extends AppCompatActivity {
         extrafiles = intent.getStringArrayListExtra("files");
         for(int i = 0; i < 8; i++){
             if(contents != null && contents.length > 8) {
-                extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+                extrafiles.set(i, files.get(i).replace("/storage/sdcard/SampleMusic/", ""));
             }
             else{
-                extrafiles.set(i, files.get(i).replace("android.resource://edu.cmich.place1l.samplemusic/", ""));
+                extrafiles.set(i, "");
             }
         }
         Spinner spinner1 = findViewById(R.id.padSelect_spinner1);
@@ -166,10 +169,10 @@ public class SampleLoadingPage extends AppCompatActivity {
         extrafiles = intent.getStringArrayListExtra("files");
         for(int i = 0; i < 8; i++){
             if(contents != null && contents.length > 8) {
-                extrafiles.set(i, files.get(i).replace("/storage/sdcard/Music/", ""));
+                extrafiles.set(i, files.get(i).replace("/storage/sdcard/SampleMusic/", ""));
             }
             else{
-                extrafiles.set(i, files.get(i).replace("android.resource://edu.cmich.place1l.samplemusic/", ""));
+                extrafiles.set(i, "");
             }
         }
         filenames = intent.getStringArrayListExtra("filenames");
@@ -343,7 +346,7 @@ public class SampleLoadingPage extends AppCompatActivity {
         }
     }
 
-
+//pushes the pad string values that are chosen in the spinners to the MainActivity
     public void saveButton(View view) {
         secondFiles.add(0,pad1);
         secondFiles.add(1,pad2);
