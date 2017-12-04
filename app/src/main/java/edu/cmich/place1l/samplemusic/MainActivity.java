@@ -98,9 +98,9 @@ public class MainActivity extends Activity {
             mp8 = MediaPlayer.create(this, R.raw.tommid);
         }
         //if there are enough files for a kit in /SampleMusic/, it will set the pads to
-        //the first 8 files in /SampleMusic/
-        //if you don't have at least 8 files in /SampleMusic/ then the default values will be placed
-        //in that mode, you cannot edit the values in the pads (it just loads the files from /res/raw/
+        //the first 8 files in /SampleMusic/ (these are the defaults)
+        //if you don't have at least 8 files in /SampleMusic/ then the default values will be placed.
+        //When you have less than 8 files in /SampleMusic/, you cannot edit the values in the pads (it just loads the files from /res/raw/)
         else {
             for (int i = 0; i < s.length; i++) {
                 //            files.add(s[i]);
