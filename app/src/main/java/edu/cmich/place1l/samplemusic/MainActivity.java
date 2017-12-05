@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         //I was using /Music/ but then I realized that subfolders inside of /Music/ break the app
         //it is easier to manage a folder that is just created by the app
         if(!musicFolder.isDirectory()){
-            musicFolder.mkdirs();
+            musicFolder.mkdir();
         }
         String[] s = musicFolder.list();
         if(!kitFilePath.isDirectory()) {
@@ -493,5 +493,45 @@ These next 8 methods are button clicks for each pad
     public void loadKitButton(View view){
         loadKit(view);
         Log.d("KITHASH", kitHash.toString());
+    }
+    //"delete kit" button calls this
+    public void deleteKitButton(View view){
+        final String[] s = {""};
+        LayoutInflater li = LayoutInflater.from(this);
+        final View loadView = li.inflate(R.layout.loadkitdialog, null);
+//        Log.d("truefiles", trueFiles.get(0).toString());
+        //spinner with values that are keys of the hashmap (the kits)
+        final Spinner loadspin = loadView.findViewById(R.id.dialogspin);
+        List<String> keys = new ArrayList<>(kitHash.keySet());
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, keys);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        loadspin.setAdapter(adapter);
+        AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String string = loadspin.getSelectedItem().toString();
+//                Log.d("STRING", string);
+//                Log.d("kit at that value", kitHash.get(string));
+                s[0] = string;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        };
+        loadspin.setOnItemSelectedListener(listener);
+        AlertDialog.Builder db = new AlertDialog.Builder(this);
+        db.setView(loadView);
+        db.setTitle("Delete Kit");
+        db.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                try{
+                    kitHash.remove(s[0]);
+                }catch(Exception e){
+                }
+            }
+
+        });
+        db.show();
     }
 }

@@ -186,6 +186,19 @@
         android:layout_alignStart="@+id/save_btn"
         android:textStyle="bold"/>
 
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSound_05"
+        android:layout_alignStart="@+id/load_btn"
+        android:layout_marginRight="2dp"
+        android:background="#666666"
+        android:onClick="deleteKitButton"
+        android:text="Delete Kit"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12sp" />
+
 </android.widget.RelativeLayout>
 
 

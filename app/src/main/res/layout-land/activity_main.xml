@@ -183,6 +183,19 @@
         android:layout_marginBottom="24dp"
         android:layout_above="@+id/buttonSound_03"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonSound_02"
+        android:layout_marginRight="2dp"
+        android:layout_toStartOf="@+id/buttonSound_02"
+        android:background="#666666"
+        android:onClick="deleteKitButton"
+        android:text="Delete Kit"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12sp" />
 </RelativeLayout>
 
 
