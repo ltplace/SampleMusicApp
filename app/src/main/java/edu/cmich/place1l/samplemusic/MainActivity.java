@@ -72,10 +72,12 @@ public class MainActivity extends Activity {
             kitFilePath.mkdir();
         }
 //        Log.d("CONTENTS LENGTH", String.valueOf(contents.length));
-        for(int i = 0; i < contents.length; i++){
-            Log.d("CONTENT", contents[i].toString());
+        if(contents != null) {
+            for (int i = 0; i < contents.length; i++) {
+                Log.d("CONTENT", contents[i].toString());
+            }
+            contents = musicFolder.listFiles();
         }
-        contents = musicFolder.listFiles();
         //sets default files from /res/raw/ folder if there are no default file values
         if(contents == null || contents.length < 8){
             for(int i = 0; i < 8; i++){
