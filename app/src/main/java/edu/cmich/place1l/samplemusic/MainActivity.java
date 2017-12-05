@@ -63,14 +63,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         //creates the samplemusic directory
         //I was using /Music/ but then I realized that subfolders inside of /Music/ break the app
+        //it is easier to manage a folder that is just created by the app
         if(!musicFolder.isDirectory()){
             musicFolder.mkdirs();
         }
-        if(!kitFile.isDirectory()){
-            kitFile.mkdirs();
-        }
         String[] s = musicFolder.list();
-        kitFilePath.mkdir();
+        if(!kitFilePath.isDirectory()) {
+            kitFilePath.mkdir();
+        }
 //        Log.d("CONTENTS LENGTH", String.valueOf(contents.length));
         for(int i = 0; i < contents.length; i++){
             Log.d("CONTENT", contents[i].toString());
