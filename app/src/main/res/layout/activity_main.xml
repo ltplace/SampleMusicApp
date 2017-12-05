@@ -9,93 +9,131 @@
 
     <Button
         android:id="@+id/buttonSound_01"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/sampleMusic_textView"
-        android:layout_below="@+id/sampleMusic_textView"
-        android:layout_marginTop="25dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="14dp"
         android:onClick="doBtnClick1"
         android:text="1"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.Compat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/sampleMusic_textView"
+        android:layout_toEndOf="@+id/sampleLoad"
+        android:layout_marginStart="9dp" />
 
     <Button
         android:id="@+id/buttonSound_02"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:layout_alignTop="@+id/buttonSound_01"
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@+id/buttonSound_01"
         android:onClick="doBtnClick2"
         android:text="2"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/buttonSound_03"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_01"
-        android:layout_below="@+id/buttonSound_01"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick3"
         android:text="3"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/buttonSound_01"
+        android:layout_alignStart="@+id/buttonSound_01"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/buttonSound_04"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_02"
-        android:layout_below="@+id/buttonSound_02"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick4"
         android:text="4"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_alignBottom="@+id/buttonSound_03"
+        android:layout_alignStart="@+id/buttonSound_02" />
 
     <Button
         android:id="@+id/buttonSound_05"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_03"
-        android:layout_below="@+id/buttonSound_03"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick5"
         android:text="5"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/buttonSound_03"
+        android:layout_alignStart="@+id/buttonSound_03"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/buttonSound_06"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_04"
-        android:layout_below="@+id/buttonSound_04"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick6"
         android:text="6"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_alignBottom="@+id/buttonSound_05"
+        android:layout_alignStart="@+id/buttonSound_04" />
 
     <Button
         android:id="@+id/buttonSound_07"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_05"
-        android:layout_below="@+id/buttonSound_05"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick7"
         android:text="7"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/buttonSound_05"
+        android:layout_alignStart="@+id/buttonSound_05"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/buttonSound_08"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignStart="@+id/buttonSound_06"
-        android:layout_below="@+id/buttonSound_06"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:onClick="doBtnClick8"
         android:text="8"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Info"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:layout_alignTop="@+id/buttonSound_07"
+        android:layout_alignBottom="@+id/buttonSound_07"
+        android:layout_below="@+id/buttonSound_06"
+        android:layout_alignStart="@+id/buttonSound_06" />
 
     <TextView
         android:id="@+id/sampleMusic_textView"
@@ -103,37 +141,51 @@
         android:layout_height="wrap_content"
         android:text="Sample Music"
         android:textSize="26sp"
+        android:layout_marginTop="14dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp" />
+        android:textColor="#31d200"
+        />
 
     <Button
         android:id="@+id/sampleLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/save_btn"
         android:layout_alignStart="@+id/save_btn"
         android:layout_alignTop="@+id/buttonSound_01"
         android:onClick="doSampleLoadingPage"
-        android:text="Sample Loading Page" />
+        android:text="Sample Loading Page"
+        android:textColor="#31d200"
+        android:background="#666666"
+        android:textStyle="bold"
+        android:layout_alignEnd="@+id/save_btn" />
 
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/sampleLoad"
-        android:layout_marginStart="14dp"
         android:onClick="saveKitButton"
-        android:text="Save Kit" />
+        android:text="Save Kit"
+        android:textColor="#31d200"
+        android:background="#666666"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/sampleLoad"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/load_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/save_btn"
-        android:layout_below="@+id/save_btn"
         android:onClick="loadKitButton"
-        android:text="Load Kit" />
+        android:text="Load Kit"
+        android:textColor="#31d200"
+        android:background="#666666"
+        android:layout_below="@+id/buttonSound_01"
+        android:layout_alignStart="@+id/save_btn"
+        android:textStyle="bold"/>
 
 </android.widget.RelativeLayout>
+
+
